@@ -1,0 +1,19 @@
+{
+  "name": "wheather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "moment": "^2.13.0",
+    "node-cricapi": "^1.2.2",
+    "request": "^2.72.0",
+    "showtimes": "^2.1.0"
+  }
+}
