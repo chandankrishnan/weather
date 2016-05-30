@@ -1,15 +1,17 @@
 {
   "name": "wheather",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "In this app,find location of movie theater and weather of location also current cricket matches",
+  "main": "app.js",
+  "start": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "chandankrishnan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
     "moment": "^2.13.0",
     "node-cricapi": "^1.2.2",
