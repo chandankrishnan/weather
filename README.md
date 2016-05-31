@@ -8,7 +8,7 @@
 3)<a href="https://www.npmjs.com/package/request">request</a><br>
 4)<a href="https://www.npmjs.com/package/showtimes">showtimes</a><br>
 5)<a href="http://ejs.co/">ejs</a><br>
-6)<a href="https://www.npmjs.com/package/google-geocode">google-goecode</a><br
+6)<a href="https://www.npmjs.com/package/google-geocode">google-goecode</a><br>
 
 <p> install all require npm dependencies for app using following command<br>
 <b>eg.sudo npm install body-parser --save</b>  :beers::beers:
