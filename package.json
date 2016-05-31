@@ -11,8 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.1",
-    "ejs": "^2.4.1",
+    "ejs": "^2.4.2",
     "express": "^4.13.4",
+    "google-geocode": "0.0.2",
     "moment": "^2.13.0",
     "node-cricapi": "^1.2.2",
     "request": "^2.72.0",

@@ -5,19 +5,27 @@ var express = require('express'),
     router = express.Router(),
     request = require('request'),
     moment = require('moment'),
+    geocode=require('google-geocode')
     showtimes = require("showtimes");
+    geocode.setApiKey('AIzaSyDnT1tOkCdp7ZLyLyOa3OYGs8X6cKFaNPc');
 /**
- * strat with home html
+ * in this function find nearest location what we want
+ * @param {loaction,search}
+ *return {body}
  */
-router.get('/', function(req, res) {
-    res.render("home.html", {
-        title: "Find Location"
-    })
-});
-
-router.post('/',function(req,res){
-	var txt=req.body.text;
-    console.log(txt)
+router.post('/get', function(req, res) {
+    var location = req.body.location,
+        search = req.body.search;
+    geocode.getGeocode(location, function(results, status) {
+        var a = JSON.parse(results),
+            uri = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
+        uri += 'location=' + a.results[0].geometry.location.lat + ',' + a.results[0].geometry.location.lng;
+        uri += '&radius=500&types=' + search; //+search;
+        uri += '&key=AIzaSyDnT1tOkCdp7ZLyLyOa3OYGs8X6cKFaNPc';
+        request(uri, function(err, req, body) {
+            res.send(JSON.parse(body));
+        })
+    });
 })
 /**
  * in this function find the weather of location
