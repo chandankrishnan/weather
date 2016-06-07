@@ -5,9 +5,19 @@ var express = require('express'),
     router = express.Router(),
     request = require('request'),
     moment = require('moment'),
-    geocode=require('google-geocode')
-    showtimes = require("showtimes");
-    geocode.setApiKey('AIzaSyDnT1tOkCdp7ZLyLyOa3OYGs8X6cKFaNPc');
+    geocode = require('google-geocode')
+showtimes = require("showtimes"),
+cricapi = require("node-cricapi");
+geocode.setApiKey('AIzaSyDnT1tOkCdp7ZLyLyOa3OYGs8X6cKFaNPc');
+
+/**
+ * in this function get welcome message
+ * @return {string msg}
+ */
+router.get('/', function(req, res) {
+    res.send("Welcome to app");
+});
+
 /**
  * in this function find nearest location what we want
  * @param {loaction,search}
@@ -26,7 +36,8 @@ router.post('/get', function(req, res) {
             res.send(JSON.parse(body));
         })
     });
-})
+});
+
 /**
  * in this function find the weather of location
  * @param {weather,location}
@@ -59,11 +70,10 @@ router.post('/weather', function(req, res) {
  * @return {matches}
  */
 router.get('/getMatches', function(req, res) {
-    var cricapi = require("node-cricapi");
     cricapi.cricketMatches(function(data) {
         res.send(data);
     })
-})
+});
 
 /**
  * in this function we get nearest movie theater of your location
