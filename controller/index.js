@@ -8,7 +8,7 @@ var express = require('express'),
     geocode = require('google-geocode')
 showtimes = require("showtimes"),
 cricapi = require("node-cricapi");
-geocode.setApiKey('AIzaSyDnT1tOkCdp7ZLyLyOa3OYGs8X6cKFaNPc');
+geocode.setApiKey('AIzaSyAvYqMsQQRVHfJNmWcXnzqNhu02jmDXyhs');
 
 /**
  * in this function get welcome message
@@ -31,7 +31,7 @@ router.post('/get', function(req, res) {
             uri = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
         uri += 'location=' + a.results[0].geometry.location.lat + ',' + a.results[0].geometry.location.lng;
         uri += '&radius=500&types=' + search; //+search;
-        uri += '&key=AIzaSyDnT1tOkCdp7ZLyLyOa3OYGs8X6cKFaNPc';
+        uri += '&key=AIzaSyAvYqMsQQRVHfJNmWcXnzqNhu02jmDXyhs';
         request(uri, function(err, req, body) {
             res.send(JSON.parse(body));
         })
